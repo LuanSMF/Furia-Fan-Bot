@@ -66,7 +66,7 @@ cd diretorio onde se encontra o projeto ex: C:\Users\luan\Documento\Furia-Fan-Bo
 npm install
 ```
 
-3.  Execute o script `furia_fanbot.sql` para criar o banco de dados `db_furiafan`
+3.  Execute o script `furia_fanbot.sql` para criar o banco de dados `db_furiafan`, o script se encontra dentro da pasta banco
 
 4. Abra seu MongoDB de preferência o Compass
 

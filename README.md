@@ -68,10 +68,6 @@ npm install
 
 4. Crie um arquivo .env com as configurações necessárias  do bot:
 
-```
-# Token do bot do Telegram
-BOT_TOKEN=seu_token
-
 5.  Coloque sua  uri local do seu mongo:
 ```bash
 mongo_uri=sua_conexao

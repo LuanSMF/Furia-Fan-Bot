@@ -1,4 +1,5 @@
 // database.js
+const { conectarMongo } = require('./database_mongo');
 require('dotenv').config();
 const mysql = require('mysql2/promise');
 

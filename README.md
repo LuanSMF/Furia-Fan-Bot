@@ -112,6 +112,10 @@ EMAIL_PASS=sua_chave
 node index.js
 ```
 
+12. Procure no Telegram por:
+```bash  
+@furiafiel_bot
+```
 ---
 
 > ⚠️ **Atenção:** Nunca envie o arquivo `.env` para o GitHub.  

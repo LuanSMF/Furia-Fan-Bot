@@ -9,19 +9,27 @@ Bot de Telegram criado por um admirador da FURIA Esports. Desenvolvido especialm
 ## 🚀 Funcionalidades
 
 - 📅 Exibe agenda atualizada dos próximos jogos da FURIA, sendo possível filtrar por data e por campeonato
+- 🔴 Transmissão de eventos ao vivo (texto, imagem ou vídeo) para usuários comuns sem acesso ao painel admin.
+- 👤 Menu exclusivo para admins gerenciarem placar, resultado e eventos durante partidas ao vivo.
+- 📖 Ao finalizar  as partidas ao vivo é criado  um espaço para ver um resumo ou a partida que já  ocorreu.
 - 🎮 Gerencia partidas, campeonatos e times com comandos administrativos, sendo possível realizar todas as operações do CRUD
 - 🔐 Sistema de autenticação por ID de administrador
 - 🗃️ Integração com banco de dados MySQL
 - ✅ Interface modular com comandos separados
 - 🛒 Botão que redireciona para a loja da Furia.
-
+- 📚 Sistema de cadastro com verificação por e-mail e seleção de jogos favoritos
+- 📨 Verificação de e-mail por código
+- 🏆 Interface para MVP e resultados finais
+   
 ---
 
 ## 🧰 Tecnologias Utilizadas
 
 - [Node.js](https://nodejs.org/en/download/) – Ambiente de execução JavaScript no back-end
 - [Telegraf](https://github.com/telegraf/telegraf) – biblioteca para criação de bots no Telegram
+- [MongoDB]
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) – Banco de dados Relacional utilizado para guardar as devidas informações
+- 
 - [mysql2](https://www.npmjs.com/package/mysql2) – driver MySQL com suporte a Promises
 - [dotenv](https://www.npmjs.com/package/dotenv) – Gerenciamento de variáveis de ambiente
 - [npm](https://www.npmjs.com/) – gerenciador de pacotes do Node.js 
@@ -91,7 +99,6 @@ node index.js
 
 ## 💡 Possíveis Melhorias Futuras
 
-- Adicionar suporte a partidas ao vivo com atualização de tempo real
 - Implementar busca de produtos da loja da FURIA no bot
 - Exibir estatísticas individuais dos jogadores
 

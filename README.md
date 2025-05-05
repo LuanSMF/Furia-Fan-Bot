@@ -42,7 +42,7 @@ Antes de iniciar, verifique se você atendeu aos seguintes requisitos:
 
 - ✅ [Node.js 18+](https://nodejs.org/)
 - ✅ [MySQL 8+](https://dev.mysql.com/downloads/mysql/8.0.html)
-- ✅ [MongoDB Compass](https://www.mongodb.com/products/tools/compass)
+- ✅ [MongoDB](https://www.mongodb.com/products/tools/compass)
 - ✅ [Git](https://git-scm.com/downloads)
 ---
 

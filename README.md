@@ -87,9 +87,10 @@ DB_NAME=db_furiafan
 DB_PORT=sua_porta(3306 ou 3307,verificar na configuração do seu banco)
 ```
 
-8. Abra o arquivo config.js em admin/config.js e altere o ID do admin:
-
+8. Entre no telegram e procure por @BotFather , digite /newbot de um nome para o bot e um identificador,ele gerara uma key, copia ela e vá até config.js e preencha:
 ```
+        BOT_TOKEN:'Sua key',
+
         ADMIN_USER_IDS: [
         seu_id_do_telegram,
         ],

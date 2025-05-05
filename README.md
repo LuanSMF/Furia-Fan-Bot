@@ -122,7 +122,8 @@ node index.js
 ## 💡 Possíveis Melhorias Futuras
 
 - Implementar busca de produtos da loja da FURIA no bot
-- Exibir estatísticas individuais dos jogadores
+- Implementar curiosidades vinculadas ao banco de dados.
+- Exibir estatísticas individuais de todos os jogadores
 
 ---
 

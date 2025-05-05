@@ -4,6 +4,6 @@ module.exports = {
     // Configurações para o sistema de ID de usuário
     // Substitua pelo seu ID do Telegram
     ADMIN_USER_IDS: [
-     // ID do primeiro admin
+        // ID do primeiro admin
     ],
 };

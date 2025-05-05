@@ -1,4 +1,4 @@
-const { pool, getAllMatches } = require('../banco/database');
+const { pool,getAllMatchesfiltro } = require('../banco/database');
 const { formatDate } = require('../utils/utils');
 const security = require('../admin/security');
 
@@ -25,7 +25,7 @@ async function filterByTournament(bot, chatId, rawTournamentId, messageId = null
         const tournamentName = tournament[0].nm_name;
 
          // Busca todas as partidas e filtra apenas as do torneio selecionado
-        const matches = await getAllMatches();
+        const matches = await getAllMatchesfiltro();
 
         const filteredMatches = matches.filter(match =>
             match.tournament_name === tournamentName
@@ -115,7 +115,7 @@ async function filterByTournament(bot, chatId, rawTournamentId, messageId = null
 // ===========================
 async function showAllMatches(bot, chatId, messageId = null) {
     try {
-        const matches = await getAllMatches();
+        const matches = await getAllMatchesfiltro();
 
         if (!matches || matches.length === 0) {
             const msg = "📅 Nenhuma partida agendada no momento. Volte mais tarde!";

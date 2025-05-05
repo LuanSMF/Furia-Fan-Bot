@@ -433,6 +433,32 @@ async function updateTeam(teamId, newName) {
   }
 }
 
+async function getAllMatchesfiltro(){
+   try {
+      const [rows] = await pool.query(`
+SELECT 
+  m.id_matches,
+  m.id_status,
+  t.nm_name AS team_name,
+  tour.nm_name AS tournament_name,
+  m.dt_match,
+  m.dt_time
+FROM tb_matches m
+JOIN tb_multivalorado mv ON m.id_multivalorado = mv.id_multivalorado
+JOIN tb_teams t ON mv.id_teams = t.id_teams
+JOIN tb_tournaments tour ON mv.id_tournaments = tour.id_tournaments
+WHERE m.id_status = 1
+  AND m.dt_match >= CURDATE()
+ORDER BY m.dt_match, m.dt_time;
+
+`);
+      return rows;
+  } catch (error) {
+      console.error('Erro ao buscar partidas:', error);
+      throw error;
+  }
+}
+
 // Exporta todas as funções e o pool
 module.exports = {
   pool,
@@ -445,6 +471,7 @@ module.exports = {
   addTeam,
   removeMatch,
   getAllMatches,
+  getAllMatchesfiltro,
   removeTournament,
   removeTeam,
   updateMatchField ,

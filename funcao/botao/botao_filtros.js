@@ -1,4 +1,4 @@
-const { getAllMatches } = require('../../banco/database');
+const {getAllMatchesfiltro } = require('../../banco/database');
 const { handleAgenda } = require('../../comandos/agenda');
 const { filterByTournament } = require('../auxiliar');
 const security = require('../../admin/security');
@@ -37,7 +37,7 @@ module.exports = async (bot, chatId, messageId, userId, isAdmin, data, callbackQ
             const dateFilter = data.replace('filter_date_', '');
 
              // Obtém todas as partidas
-            const matches = await getAllMatches();
+            const matches = await getAllMatchesfiltro();
             let filteredMatches = [];
             let filterTitle = "";
 
@@ -51,9 +51,12 @@ module.exports = async (bot, chatId, messageId, userId, isAdmin, data, callbackQ
                 tomorrow.setDate(tomorrow.getDate() + 1);
 
                 filteredMatches = matches.filter(match => {
-                    if (!match.dt_match) return false;
-                    const matchDate = new Date(match.dt_match);
-                    return matchDate >= today && matchDate < tomorrow;
+                    if (!match.dt_match || match.id_status !== 1) return false;
+                
+                    const matchDateOnly = new Date(match.dt_match).toISOString().split('T')[0];
+                    const todayStr = new Date().toISOString().split('T')[0];
+                
+                    return matchDateOnly === todayStr;
                 });
                 filterTitle = "Hoje";
             }
@@ -66,10 +69,17 @@ module.exports = async (bot, chatId, messageId, userId, isAdmin, data, callbackQ
                 dayAfterTomorrow.setDate(dayAfterTomorrow.getDate() + 1);
 
                 filteredMatches = matches.filter(match => {
-                    if (!match.dt_match) return false;
-                    const matchDate = new Date(match.dt_match);
-                    return matchDate >= tomorrow && matchDate < dayAfterTomorrow;
+                    if (!match.dt_match || match.id_status !== 1) return false;
+                
+                    const matchDateOnly = new Date(match.dt_match).toISOString().split('T')[0];
+                    
+                    const tomorrow = new Date();
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    const tomorrowStr = tomorrow.toISOString().split('T')[0];
+                
+                    return matchDateOnly === tomorrowStr;
                 });
+                
                 filterTitle = "Amanhã";
             }
 
@@ -81,10 +91,11 @@ module.exports = async (bot, chatId, messageId, userId, isAdmin, data, callbackQ
                 }
 
                 filteredMatches = matches.filter(match => {
-                    if (!match.dt_match) return false;
-                    const matchDate = new Date(match.dt_match);
-                    return matchDate.toISOString().split('T')[0] === dateFilter;
+                    if (!match.dt_match || match.id_status !== 1) return false;
+                    const matchDateOnly = new Date(match.dt_match).toISOString().split('T')[0];
+                    return matchDateOnly === dateFilter;
                 });
+                
 
                 filterTitle = validDate.toLocaleDateString('pt-BR', {
                     weekday: 'long',

@@ -1,9 +1,10 @@
 module.exports = {
-    // Token do bot do Telegram(deixei para facilitar,pois personalizei na api)
-    BOT_TOKEN:'8033336862:AAFTe4dD2x-Slkz9h7ko23gIrBf7_xhHR-c',
+    // Token do bot do Telegram,tentei deixar a key do bot facil
+    // mas pegaram a key e utilizaram para coisas erradas
+    BOT_TOKEN:'',
     // Configurações para o sistema de ID de usuário
     // Substitua pelo seu ID do Telegram
     ADMIN_USER_IDS: [
-        // ID do primeiro admin
+        , // ID do primeiro admin
     ],
 };

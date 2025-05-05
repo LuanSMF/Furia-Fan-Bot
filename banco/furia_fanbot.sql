@@ -84,7 +84,7 @@ SELECT CURDATE(), CURTIME();
 
 SELECT id_matches, dt_match, dt_time, id_status FROM tb_matches WHERE dt_match = CURDATE();
 
-select * from tb_usuario;
+select * from tb_multivalorado;
 
 SELECT id_status FROM tb_status WHERE nm_status = 'ao_vivo';
 
@@ -151,3 +151,23 @@ values
 ('PGL Major'),
 ('CCT Online'),
 ('Outros Torneios');
+
+-- Inserção de relacionamentos entre times e torneios
+INSERT INTO tb_multivalorado (id_teams, id_tournaments) VALUES
+-- Times participantes do ESL Pro League
+(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1),
+
+-- Times participantes do BLAST Premier
+(2, 2), (3, 2), (4, 2), (8, 2), (9, 2), (10, 2), (11, 2), (12, 2),
+
+-- Times participantes do IEM
+(1, 3), (2, 3), (4, 3), (5, 3), (6, 3), (9, 3), (13, 3), (14, 3),
+
+-- Times participantes do PGL Major
+(1, 4), (2, 4), (3, 4), (4, 4), (5, 4), (13, 4), (14, 4), (15, 4),
+
+-- Times participantes do CCT Online
+(6, 5), (7, 5), (8, 5), (10, 5), (11, 5), (12, 5), (14, 5), (15, 5),
+
+-- Times em Outros Torneios
+(1, 6), (3, 6), (5, 6), (7, 6), (9, 6), (11, 6), (13, 6), (15, 6);

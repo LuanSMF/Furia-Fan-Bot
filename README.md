@@ -2,7 +2,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
-Bot de Telegram criado por um admirador da FURIA Esports. Desenvolvido especialmente para o desafio técnico da  equipe de esports da Furia. Ele permite a administração de confrontos, torneios e times, com comandos acessíveis via botões interativos e integração a banco de dados MySQL.
+Bot de Telegram criado por um admirador da FURIA Esports. Desenvolvido especialmente para o desafio técnico da equipe de esports da Furia. Ele permite a administração de confrontos, torneios e times, com comandos acessíveis via botões interativos e integração com banco de dados MySQL.
 
 ---
 
@@ -11,7 +11,7 @@ Bot de Telegram criado por um admirador da FURIA Esports. Desenvolvido especialm
 - 📅 Exibe agenda atualizada dos próximos jogos da FURIA, sendo possível filtrar por data e por campeonato
 - 🔴 Transmissão de eventos ao vivo (texto, imagem ou vídeo) para usuários comuns sem acesso ao painel admin.
 - 👤 Menu exclusivo para admins gerenciarem placar, resultado e eventos durante partidas ao vivo.
-- 📖 Ao finalizar  as partidas ao vivo é criado  um espaço para ver um resumo ou a partida que já  ocorreu.
+- 📖 Ao final das partidas ao vivo, é criado um espaço para visualizar um resumo ou rever a partida que já ocorreu.
 - 🎮 Gerencia partidas, campeonatos e times com comandos administrativos, sendo possível realizar todas as operações do CRUD
 - 🔐 Sistema de autenticação por ID de administrador
 - 🗃️ Integração com banco de dados MySQL
@@ -28,7 +28,7 @@ Bot de Telegram criado por um admirador da FURIA Esports. Desenvolvido especialm
 - [Node.js](https://nodejs.org/en/download/) – Ambiente de execução JavaScript no back-end
 - [Telegraf](https://github.com/telegraf/telegraf) – biblioteca para criação de bots no Telegram
 - [MongoDB](https://www.mongodb.com/products/tools/compass) - Banco NoSQL utilizado para sessões ao vivo
-- [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) – Banco de dados Relacional utilizado para guardar as devidas informações
+- [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) – Banco de dados relacional utilizado para armazenar as informações
 - [nodemailer](https://nodemailer.com/) - Envio de e-mails com código de verificação
 - [mysql2](https://www.npmjs.com/package/mysql2) – driver MySQL com suporte a Promises
 - [dotenv](https://www.npmjs.com/package/dotenv) – Gerenciamento de variáveis de ambiente
@@ -48,23 +48,27 @@ Antes de iniciar, verifique se você atendeu aos seguintes requisitos:
 
 ## 💻 Como Rodar Localmente
 
-1. Clone o repositório:
+1. Abra o CMD e escolha o diretório desejado com o comando:"
+   
+```bash
+   cd diretorio
+   ```
+
+1.2 Clone O Repositório :
 
 ```bash
 git clone https://github.com/LuanSMF/Furia-Fan-Bot.git
-cd Furia-Fan-Bot
 ```
 
-2. Instale as dependências:
-
+2. No terminal, execute:
 ```bash
+cd diretorio onde se encontra o projeto ex: C:\Users\luan\Documento\Furia-Fan-Bot
 npm install
 ```
 
 3.  Execute o script `furia_fanbot.sql` para criar o banco de dados `db_furiafan`
 
 4. Abra seu MongoDB de preferência o Compass
-
 
 5. Crie um arquivo .env ao lado do index.js
 
@@ -93,7 +97,7 @@ DB_PORT=sua_porta(3306 ou 3307,verificar na configuração do seu banco)
 
 9.Acesse  o [Gmail](https://myaccount.google.com/security) e ative a verificação em 2 etapas, depois vá para [Senhas de App](https://myaccount.google.com/apppasswords)
 
-10.Coloque um nome ,crie o email  para enviar.pegue a chave e coloque no  ;env  desse jeito:
+10.Dê um nome, crie o e-mail de envio, copie a chave e insira no arquivo .env da seguinte forma:
 
 ```
 EMAIL_HOST=smtp.gmail.com
@@ -131,7 +135,7 @@ Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](./LIC
 ## 👨‍💻 Autor
 
 Desenvolvido por [@LuanSMF](https://github.com/LuanSMF)  
-Projeto desenvolvido para fins de desafio técnico para a vaga de Assistente de engenharia de software.
+Projeto desenvolvido como parte do desafio técnico para a vaga de Assistente de Engenharia de Software.
 
 
 

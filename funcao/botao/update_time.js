@@ -213,21 +213,35 @@ module.exports = async function handleUpdateTime(bot, chatId, messageId, userId,
         'DELETE FROM tb_multivalorado WHERE id_teams = ? AND id_tournaments = ?',
         [teamId, tournamentId]
       );
-
+    
       if (result.affectedRows === 0) {
-        await bot.telegram.answerCbQuery(callbackQuery.id, { text: "❌ Relação não encontrada" });
+        await bot.telegram.answerCbQuery(callbackQuery.id, {
+          text: "❌ Relação não encontrada"
+        });
       } else {
-        await bot.telegram.answerCbQuery(callbackQuery.id, { text: "🗑️ Campeonato removido" });
+        await bot.telegram.answerCbQuery(callbackQuery.id, {
+          text: "🗑️ Campeonato removido"
+        });
         await bot.telegram.sendMessage(chatId, '🗑️ Campeonato removido com sucesso!');
       }
       return true;
-
+    
     } catch (error) {
       console.error('Erro ao remover campeonato:', error);
-      await bot.telegram.sendMessage(chatId, '❌ Erro ao remover campeonato.');
+    
+      if (error.code === 'ER_ROW_IS_REFERENCED_2') {
+        await bot.telegram.answerCbQuery(callbackQuery.id, {
+          text: "❌ Não foi possível remover: há partidas vinculadas a esse campeonato."
+        });
+        await bot.telegram.sendMessage(chatId, '❌ Remoção bloqueada. Apague as partidas antes de excluir esse campeonato.');
+      } else {
+        await bot.telegram.answerCbQuery(callbackQuery.id, {
+          text: "❌ Erro inesperado ao remover"
+        });
+        await bot.telegram.sendMessage(chatId, '❌ Ocorreu um erro inesperado ao tentar remover o campeonato.');
+      }
+    
       return true;
     }
-  }
-
-  return false;
-};
+  };
+}
